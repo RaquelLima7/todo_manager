@@ -1,14 +1,13 @@
+require_relative "controller"
 require_relative "task"
 require_relative "repository"
+require_relative "view"
+require_relative "router"
 
 repository = Repository.new
+view = View.new
 
-task1 = Task.new("Do the laundry")
-repository.add(task1)
+controller = Controller.new(repository, view)
 
-task2 = Task.new("Grocery Shopping")
-repository.add(task2)
-
-p repository
-# p task1
-# p task2
+router = Router.new(controller)
+router.run

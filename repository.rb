@@ -1,4 +1,4 @@
-class Repository
+class Repository  #database
   def initialize
     @tasks = []  #array of tasks instances
   end
@@ -8,5 +8,11 @@ class Repository
     @tasks << task
   end
 
+  def all
+    return @tasks
+  end
 
+  def find(index)
+    return @tasks[index]
+  end
 end
